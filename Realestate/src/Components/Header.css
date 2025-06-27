@@ -1,0 +1,90 @@
+/* src/styles/Header.css */
+
+.header {
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.logo-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff9800;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-menu a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #ff9800;
+}
+
+.menu-toggle {
+  display: none;
+  background-color: transparent;
+  color: #ff9800;
+  border: 1px solid #ff9800;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+/* 🔹 Mobile Styles */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    margin-top: 16px;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+}
+
+/* On large screens: always show nav menu, hide toggle */
+@media screen and (min-width: 769px) {
+  .nav-menu {
+    display: flex !important;
+  }
+
+  .menu-toggle {
+    display: none !important;
+  }
+}
